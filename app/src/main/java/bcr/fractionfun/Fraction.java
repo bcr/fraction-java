@@ -83,15 +83,18 @@ public class Fraction {
         Fraction left = Fraction.parseFraction(parts[0]);
         String operator = parts[1];
         Fraction right = Fraction.parseFraction(parts[2]);
+        Fraction result = null;
 
         switch (operator) {
             case "*":
-                return new Fraction(left.numerator * right.numerator, left.denominator * right.denominator);
+                result = new Fraction(left.numerator * right.numerator, left.denominator * right.denominator);
+                break;
             case "+":
-                return new Fraction(left.numerator + right.numerator, right.denominator).reduce();
+                result = new Fraction(left.numerator + right.numerator, right.denominator);
+                break;
             default:
                 // Freak out?
         }
-        return null;
+        return (result != null) ? result.reduce() : null;
     }
 }
