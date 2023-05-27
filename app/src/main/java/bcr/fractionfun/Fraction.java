@@ -18,7 +18,25 @@ public class Fraction {
     }
 
     public static Fraction parseFraction(String fraction) {
-        String[] parts = fraction.split("/");
-        return new Fraction(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
+        String[] wholeAndFraction = fraction.split("_");
+        String wholePart = null;
+        String fractionalPart = null;
+        if (wholeAndFraction.length == 1) {
+            fractionalPart = fraction;
+        }
+        else {
+            wholePart = wholeAndFraction[0];
+            fractionalPart = wholeAndFraction[1];
+        }
+
+        int whole = 0;
+        if (wholePart != null) {
+            whole = Integer.parseInt(wholePart);
+        }
+
+        String[] parts = fractionalPart.split("/");
+        int numerator = Integer.parseInt(parts[0]);
+        int denominator = Integer.parseInt(parts[1]);
+        return new Fraction(numerator + (whole * denominator), denominator);
     }
 }

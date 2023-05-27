@@ -17,4 +17,11 @@ public class FractionTest {
         assertEquals(9, fraction.getNumerator());
         assertEquals(8, fraction.getDenominator());
     }
+
+    @Test void fractionParsesMixedNumber() {
+        Fraction fraction = Fraction.parseFraction("3_3/4");
+        assertNotNull(fraction);
+        assertEquals(15, fraction.getNumerator());
+        assertEquals(4, fraction.getDenominator());
+    }
 }
