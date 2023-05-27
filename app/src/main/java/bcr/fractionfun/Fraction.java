@@ -90,7 +90,7 @@ public class Fraction {
                 result = new Fraction(left.numerator * right.numerator, left.denominator * right.denominator);
                 break;
             case "+":
-                result = new Fraction(left.numerator + right.numerator, right.denominator);
+                result = new Fraction((left.numerator * right.denominator) + (right.numerator * left.denominator), left.denominator * right.denominator);
                 break;
             default:
                 // Freak out?

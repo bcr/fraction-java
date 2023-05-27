@@ -53,6 +53,11 @@ public class FractionTest {
         assertEquals("3_1/2", fraction.toString());
     }
 
+    @Test void fractionComputeDifferentDenominators() {
+        Fraction fraction = Fraction.computeExpression("3/8 + 1/4");
+        assertEquals("5/8", fraction.toString());
+    }
+
     // Operands and operators shall be separated by one or more spaces.
 
     @Test void fractionComputeHandleWhitespace() {
