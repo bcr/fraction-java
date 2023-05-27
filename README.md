@@ -28,4 +28,5 @@ gradle run -q --console=plain
 ## Running tests
 
 ```
+gradle test
 ```
