@@ -51,26 +51,44 @@ public class Fraction {
 
     @Override
     public String toString() {
+        int normalizedNumerator = numerator;
+        int normalizedDenominator = denominator;
+
+        if (normalizedDenominator < 0) {
+            normalizedDenominator *= -1;
+            normalizedNumerator *= -1;
+        }
+
+        boolean isNegative = (normalizedNumerator < 0);
         int whole = 0;
         int outputNumerator;
-        int outputDenominator = denominator;
+        int outputDenominator = normalizedDenominator;
+        String finalString = "";
 
-        if (numerator >= denominator) {
-            whole = numerator / denominator;
-            outputNumerator = numerator - (whole * denominator);
+        if (isNegative) {
+            normalizedNumerator = Math.abs(normalizedNumerator);
+        }
+
+        if (normalizedNumerator >= normalizedDenominator) {
+            whole = normalizedNumerator / normalizedDenominator;
+            outputNumerator = normalizedNumerator - (whole * normalizedDenominator);
         }
         else {
-            outputNumerator = numerator;
+            outputNumerator = normalizedNumerator;
+        }
+
+        if (isNegative) {
+            finalString += "-";
         }
 
         if (outputNumerator == 0) {
-            return "" + whole;
+            return finalString + whole;
         }
         else if (whole > 0) {
-            return "" + whole + "_" + outputNumerator + "/" + outputDenominator;
+            return finalString + whole + "_" + outputNumerator + "/" + outputDenominator;
         }
         else {
-            return "" + outputNumerator + "/" + outputDenominator;
+            return finalString + outputNumerator + "/" + outputDenominator;
         }
     }
 

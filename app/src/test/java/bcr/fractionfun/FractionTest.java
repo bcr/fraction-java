@@ -82,6 +82,11 @@ public class FractionTest {
         assertEquals("5/8", fraction.toString());
     }
 
+    @Test void fractionComputeSubtractNegativeResult() {
+        Fraction fraction = Fraction.computeExpression("1 - 9/8");
+        assertEquals("-1/8", fraction.toString());
+    }
+
     @Test void fractionComputeDivide() {
         Fraction fraction = Fraction.computeExpression("1 / 4/8");
         assertEquals("2", fraction.toString());
