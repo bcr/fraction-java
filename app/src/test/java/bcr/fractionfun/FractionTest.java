@@ -67,6 +67,11 @@ public class FractionTest {
         assertEquals("5/8", fraction.toString());
     }
 
+    @Test void fractionComputeSubtract() {
+        Fraction fraction = Fraction.computeExpression("2_3/8 - 28/16");
+        assertEquals("5/8", fraction.toString());
+    }
+
     // Operands and operators shall be separated by one or more spaces.
 
     @Test void fractionComputeHandleWhitespace() {

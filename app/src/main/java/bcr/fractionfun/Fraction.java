@@ -101,6 +101,9 @@ public class Fraction {
             case "+":
                 result = new Fraction((left.numerator * right.denominator) + (right.numerator * left.denominator), left.denominator * right.denominator);
                 break;
+            case "-":
+                result = new Fraction((left.numerator * right.denominator) - (right.numerator * left.denominator), left.denominator * right.denominator);
+                break;
             default:
                 // Freak out?
         }
