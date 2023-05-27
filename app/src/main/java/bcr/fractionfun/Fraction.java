@@ -63,7 +63,10 @@ public class Fraction {
             outputNumerator = numerator;
         }
 
-        if (whole > 0) {
+        if (outputNumerator == 0) {
+            return "" + whole;
+        }
+        else if (whole > 0) {
             return "" + whole + "_" + outputNumerator + "/" + outputDenominator;
         }
         else {
