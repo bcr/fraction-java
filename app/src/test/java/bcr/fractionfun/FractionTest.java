@@ -52,4 +52,11 @@ public class FractionTest {
         Fraction fraction = Fraction.computeExpression("2_3/8 + 9/8");
         assertEquals("3_1/2", fraction.toString());
     }
+
+    // Operands and operators shall be separated by one or more spaces.
+
+    @Test void fractionComputeHandleWhitespace() {
+        Fraction fraction = Fraction.computeExpression("1/2   *   3_3/4");
+        assertEquals("1_7/8", fraction.toString());
+    }
 }

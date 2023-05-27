@@ -79,7 +79,7 @@ public class Fraction {
     }    
 
     public static Fraction computeExpression(String expression) {
-        String[] parts = expression.split(" ");
+        String[] parts = expression.split("\s+");
         Fraction left = Fraction.parseFraction(parts[0]);
         String operator = parts[1];
         Fraction right = Fraction.parseFraction(parts[2]);
