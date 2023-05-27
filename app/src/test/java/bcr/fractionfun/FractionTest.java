@@ -29,4 +29,9 @@ public class FractionTest {
         Fraction fraction = Fraction.parseFraction("1/2");
         assertEquals("1/2", fraction.toString());
     }
+
+    @Test void fractionToStringMixed() {
+        Fraction fraction = Fraction.parseFraction("1_7/8");
+        assertEquals("1_7/8", fraction.toString());
+    }
 }

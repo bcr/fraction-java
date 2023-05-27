@@ -42,6 +42,23 @@ public class Fraction {
 
     @Override
     public String toString() {
-        return "" + numerator + "/" + denominator;
+        int whole = 0;
+        int outputNumerator;
+        int outputDenominator = denominator;
+
+        if (numerator > denominator) {
+            whole = numerator / denominator;
+            outputNumerator = numerator - (whole * denominator);
+        }
+        else {
+            outputNumerator = numerator;
+        }
+
+        if (whole > 0) {
+            return "" + whole + "_" + outputNumerator + "/" + outputDenominator;
+        }
+        else {
+            return "" + outputNumerator + "/" + outputDenominator;
+        }
     }
 }
