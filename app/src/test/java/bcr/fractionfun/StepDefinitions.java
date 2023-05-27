@@ -1,10 +1,9 @@
 package bcr.fractionfun;
 
-import io.cucumber.java.en.When;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class StepDefinitions {
     private Fraction result;
