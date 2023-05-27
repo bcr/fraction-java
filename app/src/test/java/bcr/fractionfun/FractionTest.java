@@ -49,6 +49,11 @@ public class FractionTest {
         assertEquals("8", fraction.toString());
     }
 
+    @Test void fractionToStringWholeOne() {
+        Fraction fraction = Fraction.parseFraction("1");
+        assertEquals("1", fraction.toString());
+    }
+
     // From the requirements example runs:
     // ? 1/2 * 3_3/4
     // = 1_7/8

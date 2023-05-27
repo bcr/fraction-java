@@ -55,7 +55,7 @@ public class Fraction {
         int outputNumerator;
         int outputDenominator = denominator;
 
-        if (numerator > denominator) {
+        if (numerator >= denominator) {
             whole = numerator / denominator;
             outputNumerator = numerator - (whole * denominator);
         }
