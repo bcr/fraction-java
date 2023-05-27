@@ -53,7 +53,7 @@ public class FractionTest {
         assertEquals("3_1/2", fraction.toString());
     }
 
-    @Test void fractionComputeDifferentDenominators() {
+    @Test void fractionComputeAddDifferentDenominators() {
         Fraction fraction = Fraction.computeExpression("3/8 + 1/4");
         assertEquals("5/8", fraction.toString());
     }
