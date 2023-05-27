@@ -40,3 +40,8 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+// https://stackoverflow.com/questions/13172137/console-application-with-java-and-gradle
+run {
+    standardInput = System.in
+}

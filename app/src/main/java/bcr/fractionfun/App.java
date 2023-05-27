@@ -3,12 +3,27 @@
  */
 package bcr.fractionfun;
 
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                System.out.print("? ");
+                String line = null;
+                try {
+                    line = scanner.nextLine();
+                }
+                catch (NoSuchElementException e) {
+                    break;
+                }
+                System.out.println("= " + Fraction.computeExpression(line));    
+            }
+        }
     }
 }

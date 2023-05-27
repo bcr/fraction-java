@@ -22,6 +22,7 @@ Example run
 ## Running interactive prompt
 
 ```
+gradle run -q --console=plain
 ```
 
 ## Running tests
