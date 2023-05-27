@@ -43,4 +43,13 @@ public class FractionTest {
         Fraction fraction = Fraction.computeExpression("1/2 * 3_3/4");
         assertEquals("1_7/8", fraction.toString());
     }
+
+    // From the requirements example runs:
+    // ? 2_3/8 + 9/8
+    // = 3_1/2
+
+    @Test void fractionComputeAdd() {
+        Fraction fraction = Fraction.computeExpression("2_3/8 + 9/8");
+        assertEquals("3_1/2", fraction.toString());
+    }
 }

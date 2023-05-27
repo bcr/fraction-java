@@ -62,6 +62,22 @@ public class Fraction {
         }
     }
 
+    // Bard wrote reduce and gcd
+    // Given a numerator and a denominator, can you give me Java code to compute the numerator and denominator in lowest terms?
+
+    public Fraction reduce() {
+        int gcd = gcd(numerator, denominator);
+        return new Fraction(numerator / gcd, denominator / gcd);
+    }
+
+    private static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }    
+
     public static Fraction computeExpression(String expression) {
         String[] parts = expression.split(" ");
         Fraction left = Fraction.parseFraction(parts[0]);
@@ -71,6 +87,8 @@ public class Fraction {
         switch (operator) {
             case "*":
                 return new Fraction(left.numerator * right.numerator, left.denominator * right.denominator);
+            case "+":
+                return new Fraction(left.numerator + right.numerator, right.denominator).reduce();
             default:
                 // Freak out?
         }
