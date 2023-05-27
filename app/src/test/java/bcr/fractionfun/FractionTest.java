@@ -25,6 +25,15 @@ public class FractionTest {
         assertEquals(4, fraction.getDenominator());
     }
 
+    // Improper fractions and whole numbers are also allowed as operands.
+
+    @Test void fractionParsesWholeNumber() {
+        Fraction fraction = Fraction.parseFraction("3");
+        assertNotNull(fraction);
+        assertEquals(3, fraction.getNumerator());
+        assertEquals(1, fraction.getDenominator());
+    }
+
     @Test void fractionToStringFraction() {
         Fraction fraction = Fraction.parseFraction("1/2");
         assertEquals("1/2", fraction.toString());

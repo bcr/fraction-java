@@ -22,7 +22,12 @@ public class Fraction {
         String wholePart = null;
         String fractionalPart = null;
         if (wholeAndFraction.length == 1) {
-            fractionalPart = fraction;
+            if (fraction.contains("/")) {
+                fractionalPart = fraction;
+            }
+            else {
+                wholePart = fraction;
+            }
         }
         else {
             wholePart = wholeAndFraction[0];
@@ -34,9 +39,13 @@ public class Fraction {
             whole = Integer.parseInt(wholePart);
         }
 
-        String[] parts = fractionalPart.split("/");
-        int numerator = Integer.parseInt(parts[0]);
-        int denominator = Integer.parseInt(parts[1]);
+        int numerator = 0;
+        int denominator = 1;
+        if (fractionalPart != null) {
+            String[] parts = fractionalPart.split("/");
+            numerator = Integer.parseInt(parts[0]);
+            denominator = Integer.parseInt(parts[1]);
+        }
         return new Fraction(numerator + (whole * denominator), denominator);
     }
 
