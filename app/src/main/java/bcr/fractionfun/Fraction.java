@@ -61,4 +61,19 @@ public class Fraction {
             return "" + outputNumerator + "/" + outputDenominator;
         }
     }
+
+    public static Fraction computeExpression(String expression) {
+        String[] parts = expression.split(" ");
+        Fraction left = Fraction.parseFraction(parts[0]);
+        String operator = parts[1];
+        Fraction right = Fraction.parseFraction(parts[2]);
+
+        switch (operator) {
+            case "*":
+                return new Fraction(left.numerator * right.numerator, left.denominator * right.denominator);
+            default:
+                // Freak out?
+        }
+        return null;
+    }
 }
