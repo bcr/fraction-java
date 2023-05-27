@@ -101,6 +101,9 @@ public class Fraction {
             case "*":
                 result = new Fraction(left.numerator * right.numerator, left.denominator * right.denominator);
                 break;
+            case "/":
+                result = new Fraction(left.numerator * right.denominator, left.denominator * right.numerator);
+                break;
             case "+":
                 result = new Fraction((left.numerator * right.denominator) + (right.numerator * left.denominator), left.denominator * right.denominator);
                 break;
