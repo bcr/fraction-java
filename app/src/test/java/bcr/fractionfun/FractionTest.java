@@ -25,6 +25,13 @@ public class FractionTest {
         assertEquals(4, fraction.getDenominator());
     }
 
+    @Test void fractionParsesNegativeMixedNumber() {
+        Fraction fraction = Fraction.parseFraction("-3_3/4");
+        assertNotNull(fraction);
+        assertEquals(-15, fraction.getNumerator());
+        assertEquals(4, fraction.getDenominator());
+    }
+
     // Improper fractions and whole numbers are also allowed as operands.
 
     @Test void fractionParsesWholeNumber() {

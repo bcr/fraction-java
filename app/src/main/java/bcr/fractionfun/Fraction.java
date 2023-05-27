@@ -18,6 +18,11 @@ public class Fraction {
     }
 
     public static Fraction parseFraction(String fraction) {
+        int numeratorSignMultiplier = (fraction.charAt(0) == '-') ? -1 : 1;
+        if (numeratorSignMultiplier == -1) {
+            fraction = fraction.substring(1);
+        }
+
         String[] wholeAndFraction = fraction.split("_");
         String wholePart = null;
         String fractionalPart = null;
@@ -46,7 +51,7 @@ public class Fraction {
             numerator = Integer.parseInt(parts[0]);
             denominator = Integer.parseInt(parts[1]);
         }
-        return new Fraction(numerator + (whole * denominator), denominator);
+        return new Fraction(numeratorSignMultiplier * (numerator + (whole * denominator)), denominator);
     }
 
     @Override
