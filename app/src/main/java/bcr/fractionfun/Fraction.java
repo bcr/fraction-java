@@ -39,4 +39,9 @@ public class Fraction {
         int denominator = Integer.parseInt(parts[1]);
         return new Fraction(numerator + (whole * denominator), denominator);
     }
+
+    @Override
+    public String toString() {
+        return "" + numerator + "/" + denominator;
+    }
 }

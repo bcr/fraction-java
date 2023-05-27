@@ -24,4 +24,9 @@ public class FractionTest {
         assertEquals(15, fraction.getNumerator());
         assertEquals(4, fraction.getDenominator());
     }
+
+    @Test void fractionToStringFraction() {
+        Fraction fraction = Fraction.parseFraction("1/2");
+        assertEquals("1/2", fraction.toString());
+    }
 }
