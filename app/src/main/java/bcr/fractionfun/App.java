@@ -6,7 +6,15 @@ package bcr.fractionfun;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * The main application class.
+ */
 public class App {
+    /**
+     * The main entrypoint for the console application.
+     * 
+     * @param args provided, but unused
+     */
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {

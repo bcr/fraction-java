@@ -1,22 +1,47 @@
 package bcr.fractionfun;
 
+/**
+ * Represents a fraction.
+ */
 public class Fraction {
     private int numerator;
     private int denominator;
 
+    /**
+     * Creates a new Fraction with the given numerator and denominator.
+     * 
+     * @param numerator the numerator
+     * @param denominator the denominator
+     */
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
 
+    /**
+     * Gets the numerator.
+     * 
+     * @return the numerator
+     */
     public int getNumerator() {
         return numerator;
     }
 
+    /**
+     * Gets the denominator.
+     * 
+     * @return the denominator
+     */
     public int getDenominator() {
         return denominator;
     }
 
+    /**
+     * Creates a new Fraction object from a string.
+     *
+     * @param fraction the fraction to parse
+     * @return the new Fraction
+     */
     public static Fraction parseFraction(String fraction) {
         int numeratorSignMultiplier = (fraction.charAt(0) == '-') ? -1 : 1;
         if (numeratorSignMultiplier == -1) {
@@ -100,6 +125,12 @@ public class Fraction {
     // Bard wrote reduce and gcd
     // Given a numerator and a denominator, can you give me Java code to compute the numerator and denominator in lowest terms?
 
+    /**
+     * Creates a new Fraction from this Fraction with the numerator and
+     * denominator in lowest terms.
+     * 
+     * @return a new Fraction with the numerator and denominator in lowest terms
+     */
     public Fraction reduce() {
         int gcd = gcd(numerator, denominator);
         return new Fraction(numerator / gcd, denominator / gcd);
@@ -113,6 +144,12 @@ public class Fraction {
         }
     }    
 
+    /**
+     * Computes the result for an expression, returning a Fraction.
+     *
+     * @param expression a math expression
+     * @return the result from computing the expression
+     */
     public static Fraction computeExpression(String expression) {
         String[] parts = expression.split("\s+");
         Fraction left = Fraction.parseFraction(parts[0]);
